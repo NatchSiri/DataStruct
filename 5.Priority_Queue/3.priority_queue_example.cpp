@@ -17,6 +17,8 @@ int main() {
     priority_queue<int, CompFunc>
         pq4([](int x, int y){return x < y;}); // lambda
     priority_queue<int, cmp> pq5;
+    int a[6] = {3, 4, 2, 5, 1, 6};
+    priority_queue<int, CompFunc> pq6(a, 6, myGreater);
     for (int i = 0; i < 10; i++) {
         pq1.push(i);
         pq2.push(i);
@@ -29,5 +31,6 @@ int main() {
     std::cout << pq3.top() << std::endl;
     std::cout << pq4.top() << std::endl;
     std::cout << pq5.top() << std::endl;
+    std::cout << pq6.size() << " " << pq6.top() << std::endl;
     return 0;
 }
